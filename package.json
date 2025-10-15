@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest --reporter verbose",
+    "test:watch": "vitest --reporter verbose --watch",
     "test:ui": "vitest --ui"
   },
   "devDependencies": {
