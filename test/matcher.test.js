@@ -31,3 +31,39 @@ it("toBeTruthy matcher", () => {
   const value = 1;
   expect(value).toBeTruthy();
 });
+
+// toBeFalsy: checks is the value is false or not
+
+it("toBeFalsy matcher", () => {
+  const value = "";
+  expect(value).toBeFalsy();
+});
+
+// toBeGreaterThan: check is the expected value greater than from given value or not
+it("toBeGreaterThan", () => {
+  const value = 10;
+  expect(value).toBeGreaterThan(5);
+});
+
+// toBeLessThan: check is the expected value less than from given value or not
+it("toBeLessThan", () => {
+  const value = 1;
+  expect(value).toBeLessThan(5);
+});
+// toBeLessThanOrEqual: check is the expected value less than from given value or equal
+it("toBeLessThan", () => {
+  const value = 1;
+  expect(value).toBeLessThanOrEqual(5);
+});
+
+// toContain: checks if a value is present within an array, string, or iterable.
+it("toContain", () => {
+  const string = "Hello, world";
+  expect(string).toContain("Hell");
+});
+
+// toMatch: checks if a value is present within an array, string, or iterable.
+it("toMatch", () => {
+  const string = "Hello, world";
+  expect(string).toMatch(/world/);
+});
