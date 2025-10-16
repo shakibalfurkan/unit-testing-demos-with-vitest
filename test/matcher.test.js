@@ -1,5 +1,6 @@
 // toBe: check for strick equality, === , meaning both values must be the same type and value.
 
+import { test } from "vitest";
 import { it, expect } from "vitest";
 
 it("toBe matcher", () => {
@@ -66,4 +67,44 @@ it("toContain", () => {
 it("toMatch", () => {
   const string = "Hello, world";
   expect(string).toMatch(/world/);
+});
+
+// toHaveProperty: checks if a property exist in a object
+it("toHaveProperty", () => {
+  const obj = { name: "shakib", age: 19 };
+  expect(obj).toHaveProperty("name");
+});
+
+// toBeDefined: checks if a property defined in a object
+it("toBeDefined", () => {
+  const obj = { name: "shakib", age: 19 };
+  expect(obj.name).toBeDefined();
+});
+
+// toBeUndefined: checks if a property Undefined in a object
+it("toBeUndefined", () => {
+  const obj = { name: "shakib", age: 19 };
+  expect(obj.skill).toBeUndefined();
+});
+
+// test("expect.soft test", () => {
+//   expect.soft(1 + 1).toBe(3); // mark the test as fail and continue
+//   expect.soft(1 + 2).toBe(4); // mark the test as fail and continue
+// });
+
+test("fruit is one of the allowed values", () => {
+  const fruit = "apple";
+  expect(fruit).toBeOneOf(["apple", "banana", "orange"]);
+});
+
+test("stock is type of string", () => {
+  const actual = "stock";
+  expect(actual).toBeTypeOf("string");
+});
+
+it("should check math input", () => {
+  const input = Math.sqrt(16);
+
+  expect(input).not.to.equal(2);
+  expect(input).not.toBe(2);
 });
